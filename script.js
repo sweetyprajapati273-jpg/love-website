@@ -67,9 +67,8 @@ noBtn.addEventListener("mouseover",()=>{
         transform:translateY(0);
         opacity:1;
     }
-  to{
+    to{
         transform:translateY(-110vh);
         opacity:0;
     }
-
 }
