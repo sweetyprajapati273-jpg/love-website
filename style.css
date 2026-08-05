@@ -1,1 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:400px;
+    padding:35px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 0 30px #ff007f;
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:20px;
+    color:#ff4da6;
+}
+
+.message{
+    font-size:18px;
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+button{
+    padding:15px 30px;
+    margin:10px;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#ff007f;
+    color:white;
+    box-shadow:0 0 20px #ff007f;
+}
+
+#no{
+    background:#222;
+    color:white;
+    border:1px solid #ff007f;
+}
