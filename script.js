@@ -1,36 +1,76 @@
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
+// Floating Hearts ❤️
 
-// Yes button
-yesBtn.addEventListener("click", () => {
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-20px";
+
+    heart.style.fontSize = 
+    Math.random() * 20 + 15 + "px";
+
+    heart.style.animation =
+    "float 5s linear";
+
+    heart.style.zIndex = "1";
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+
+setInterval(createHeart,300);
+
+
+// Yes Button Effect
+
+const yesBtn = document.getElementById("yes");
+
+yesBtn.addEventListener("click",()=>{
+
     document.body.innerHTML = `
-        <div style="
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            background:linear-gradient(135deg,#ff5f9e,#ff9a9e);
-            color:white;
-            font-family:Arial;
-            text-align:center;
-        ">
-            <h1 style="font-size:40px;">Yayyy!! ❤️🥹</h1>
-            <h2>You've made me the happiest person! 💖</h2>
-            <p>I promise to always make you smile. 🌹</p>
-        </div>
+    <div class="container">
+        <h1>❤️ Yayyy ❤️</h1>
+        <p class="message">
+        You unlocked my heart 🔓<br>
+        Forever starts today ✨
+        </p>
+    </div>
     `;
+
 });
 
-// No button runs away
-noBtn.addEventListener("touchstart", moveButton);
-noBtn.addEventListener("mouseover", moveButton);
 
-function moveButton() {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 60);
+// No Button Escape
 
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover",()=>{
+
+    noBtn.style.position="absolute";
+    noBtn.style.left=Math.random()*80+"%";
+    noBtn.style.top=Math.random()*80+"%";
+
+});
+
+@keyframes float{
+
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
 }
