@@ -1,67 +1,57 @@
-// Floating Hearts ❤️
+// ❤️ Floating Hearts
 
 function createHeart(){
 
     const heart = document.createElement("div");
 
     const hearts = ["❤️","💖","💜","🖤"];
-heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
 
     heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-20px";
-
-    heart.style.fontSize = 
-    Math.random() * 20 + 15 + "px";
-
-    heart.style.animation =
-    "float 5s linear";
-
-    heart.style.zIndex = "1";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.bottom = "-30px";
+    heart.style.fontSize = "25px";
+    heart.style.zIndex = "5";
+    heart.style.animation = "float 5s linear";
 
     document.body.appendChild(heart);
-
 
     setTimeout(()=>{
         heart.remove();
     },5000);
 }
 
+setInterval(createHeart,500);
 
-setInterval(createHeart,300);
 
-
-// Yes Button Effect
+// 💖 YES BUTTON
 
 const yesBtn = document.getElementById("yes");
 
-yesBtn.addEventListener("click",()=>{
+yesBtn.onclick = function(){
 
-    document.body.innerHTML = `
-    <div class="container">
-        <h1>❤️ Yayyy ❤️</h1>
-        <p class="message">
-        You unlocked my heart 🔓<br>
-        Forever starts today ✨
-        </p>
-    </div>
+    document.querySelector(".container").innerHTML = `
+    <h1>❤️ Yayyy ❤️</h1>
+    <p class="message">
+    You unlocked my heart 🔓<br>
+    Forever starts today ✨
+    </p>
     `;
+};
 
-});
 
-
-// No Button Escape
+// 😂 NO BUTTON
 
 const noBtn = document.getElementById("no");
 
-noBtn.addEventListener("mouseover",()=>{
-
+function moveNo(){
     noBtn.style.position="absolute";
-    noBtn.style.left=Math.random()*80+"%";
-    noBtn.style.top=Math.random()*80+"%";
+    noBtn.style.left=Math.random()*80+"vw";
+    noBtn.style.top=Math.random()*80+"vh";
+}
 
-});
-
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
 @keyframes float{
     from{
         transform:translateY(0);
