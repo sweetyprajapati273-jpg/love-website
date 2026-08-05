@@ -4,7 +4,8 @@ function createHeart(){
 
     const heart = document.createElement("div");
 
-    heart.innerHTML = "❤️";
+    const hearts = ["❤️","💖","💜","🖤"];
+heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
